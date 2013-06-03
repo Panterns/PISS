@@ -6,7 +6,7 @@
     <div id="loginFormWrapper">
 <h2>Log in to your account.</h2>
 @using (Html.BeginForm(new { Action = "LoginCall" })) {
-
+   
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -22,6 +22,13 @@
                 @Html.PasswordFor(m => m.Password)
                 @Html.ValidationMessageFor(m => m.Password)
                 
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RememberMe, new{ @class= "checkbox"})
+                @Html.CheckBoxFor(m => m.RememberMe)
+
+
+
             </li>
         </ol>
         <input type="submit" />

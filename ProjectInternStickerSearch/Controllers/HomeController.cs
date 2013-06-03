@@ -45,11 +45,11 @@ namespace ProjectInternStickerSearch.Controllers
             return View();
         }
 
-        public ActionResult LoginCall(string UserName, string Password)
+        public ActionResult LoginCall(string UserName, string Password, bool RememberMe)
         {
             Login loginModelObject = new Login();
             
-            if (0 == loginModelObject.LogIn(UserName, Password))
+            if (0 == loginModelObject.LogIn(UserName, Password, RememberMe))
             {
                 FormsAuthentication.SetAuthCookie(UserName, true);
                 username = UserName;
