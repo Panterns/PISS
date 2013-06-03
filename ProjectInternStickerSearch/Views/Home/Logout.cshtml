@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Logout";
+}
+<section id="Logout">
+    <div>
+         @*@using (Html.BeginForm("Logout", "Home", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>*@
+        <p> Logout Successful!</p>
+        @Html.ActionLink("Return to home", "Index", "Home")
+    </div>
+</section>

@@ -1,0 +1,35 @@
+﻿@model ProjectInternStickerSearch.Models.LoginModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<section id="loginForm">
+    <div id="loginFormWrapper">
+<h2>Log in to your account.</h2>
+@using (Html.BeginForm(new { Action = "LoginCall" })) {
+
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log in Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+                
+            </li>
+        </ol>
+        <input type="submit" />
+    </fieldset>
+    <p>
+        @Html.ActionLink("Register", "Register", "Home") if you don't have an account.
+    </p>
+}
+        </div>
+</section>
+
