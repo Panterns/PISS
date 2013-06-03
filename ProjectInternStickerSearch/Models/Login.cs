@@ -50,7 +50,10 @@ namespace ProjectInternStickerSearch.Models
                                                           param: parms);
                 System.Console.WriteLine("hello");
                 System.Console.WriteLine(login);
+                connection.Close();
                 return parms.Get<int>("@Result");
+               
+                
             }
         }
     }
@@ -65,7 +68,7 @@ namespace ProjectInternStickerSearch.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "RememberMe")]
+        [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }
     }
 }
